@@ -36,14 +36,10 @@ for identity in data:
             mappedSeq = Seq(sequence[seqEnd:seqStart+1])
             mappedSeq = mappedSeq.reverse_complement()
 
-    # print(len(mappedSeq))
     print(mappedSeq)
-    # SeqIO.write(SeqRecord(id = values[0].split("_")[-1], seq=Seq(mappedSeq)), newFasta, "fasta")
     if len(mappedSeq) != 0:
       mappedSeqRec.append(
         SeqRecord(id=values[0].split("_")[-1], seq=Seq(mappedSeq),
                   description=":".join([subSeq, str(seqStart), str(seqEnd)])))
-
-print(len(mappedSeqRec))
 
 SeqIO.write(mappedSeqRec, args.outfile, "fasta")
