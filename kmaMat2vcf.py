@@ -4,7 +4,7 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 
 
-getKMA_version = "KMA-1.4.12a"
+############## The code tries to read the matrix file from KMA and return a dataframe with mutations listed in genePos file#########
 
 
 def read_matrix(matrix_file, outfile):
